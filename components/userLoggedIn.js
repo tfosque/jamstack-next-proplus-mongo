@@ -2,9 +2,9 @@
 
 const UserLoggedIn = () => {
     return (
-        <span style={{listStyle: "none"}}>
+        <small>
             Tim Fosque | Test - Denver | 280831
-        </span>
+        </small>
     )
 }
 
