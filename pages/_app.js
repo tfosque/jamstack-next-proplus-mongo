@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
       </div>
       <Container fluid> 
         <Component {...pageProps} />
-      </Container>
+      </Container>  
     </div>
   );
 }

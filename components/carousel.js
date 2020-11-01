@@ -5,7 +5,7 @@ const roofImages02 = `https://www.tamko.com/images/default-source/home-banner/co
 const roofImages03 = `https://www.tamko.com/images/default-source/home-banner/colors-of-nature---weathered-wood.jpg?sfvrsn=cd555da0_10`;
 
 const CarouselDisplay = (props) => {
-  console.log({ props });
+  //  console.log({ props });
   return (
     <div style={{ display: props.hide ? "none" : "display" }}>
       <Carousel>
