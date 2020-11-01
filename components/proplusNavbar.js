@@ -7,20 +7,10 @@ import {
   faShoppingCart,
   faDivide,
 } from "@fortawesome/free-solid-svg-icons";
-import UserLoggedIn from "../components/userLoggedIn";
 
 const ProplusNavbar = () => {
   return (
     <div>
-      <Navbar
-        bg="light"
-        variant="light"
-        style={{ margin: "0px", padding: "0px" }}
-      >
-        <Nav.Link>
-          <UserLoggedIn />
-        </Nav.Link>
-      </Navbar>
       <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark">
         <button
           className="navbar-toggler"
@@ -46,7 +36,7 @@ const ProplusNavbar = () => {
         <Nav className="ml-auto">
           <Nav.Link href="/orders">Order History</Nav.Link>
           <Nav.Link href="/templates">Templates</Nav.Link>
-          <Nav.Link href="/cartContainer">
+          <Nav.Link href="/cart">
             <span
               style={{
                 background: "#007bff",

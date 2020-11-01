@@ -2,7 +2,7 @@
 
 const UserLoggedIn = () => {
     return (
-        <small>
+        <small className="text-primary">
             Tim Fosque | Test - Denver | 280831
         </small>
     )

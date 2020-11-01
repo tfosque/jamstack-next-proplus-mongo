@@ -1,10 +1,8 @@
 
-
-
 const Demo = () => {
     return (
         <div>
-            Demo
+            Advertisements
         </div>
     )
 }
