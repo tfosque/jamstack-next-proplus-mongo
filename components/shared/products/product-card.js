@@ -2,7 +2,6 @@ import { Component } from "react";
 const { Card } = require("react-bootstrap");
 import Checked from "./checked";
 import { isEmpty } from "lodash";
-import ProductsState from '../../../pages/store/products-store'
 
 class ProductCard extends Component {
   constructor(props) {
