@@ -23,7 +23,7 @@ class ProductCard extends Component {
     });
   }
   addToSelected() {
-    console.log('state:', this.ProductsState)
+    // console.log('state:', this.ProductsState)
   }
   handleClick() {
     this.toggleCardBorder()

@@ -15,13 +15,12 @@ interface ProductDetail {
   qty?: any;
   url?: string;
 } */
-export const ProductsState = () => {
-  let state = {
-    products: [],
-    selectedProducts: [],
-  };
 
-  console.log({state})
-
+const ProductsStore = () => {
+  return (
+      <div>
+          <></>
+      </div>
+  )
 }
-
+export default ProductsStore
