@@ -14,6 +14,8 @@ class CartContainer extends Component {
   componentDidMount() {
    this.getCartItems();
    this.getProducts();
+   // console.log('process', process.env.NODE_ENV)
+   this.setState({ apiPrefix: process.env.NODE_ENV === 'development' ? 'localhost:3003/' : '/'});
   }
   componentDidUpdate() {
     console.log(this.state)
@@ -32,7 +34,7 @@ class CartContainer extends Component {
   }
   getProducts() {
     axios
-    .get("http://localhost:3003/api/products")
+    .get("/api/products")
     .then((res) => {
       try {
         res.status === 200 ? this.setState({ products: res.data }) : null;

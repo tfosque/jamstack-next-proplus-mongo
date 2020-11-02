@@ -6,11 +6,9 @@ import CartItem from './cart-item'
 
 const Cart = (props) => {
   // console.log('cart', { props });
-  // var settings = require("settings");
 
   const router = useRouter();
   // const dev = process.env.NODE_ENV !== 'production';
-  console.log('process', process.env.NODE_ENV)
 
   return (
     <Row>
@@ -22,7 +20,7 @@ const Cart = (props) => {
                 <CartItem key={i} item={item} />
              )           
           })}
-        </div>
+        </div>  
       </Col>
       <Col lg="3">
         <OrderSummary />
