@@ -6,9 +6,12 @@ import CartItem from './cart-item'
 
 const Cart = (props) => {
   // console.log('cart', { props });
-  console.log('router:', )
+  // var settings = require("settings");
+
   const router = useRouter()
+  console.log('router:')
   console.log(router.pathname)
+  // console.log('settings:', settings.PROJECT_DIR )
   return (
     <Row>
       <Col lg="9">
