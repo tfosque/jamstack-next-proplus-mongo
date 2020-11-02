@@ -9,11 +9,9 @@ const Cart = (props) => {
   // var settings = require("settings");
 
   const router = useRouter();
-  const dev = process.env.NODE_ENV !== 'production';
+  // const dev = process.env.NODE_ENV !== 'production';
+  console.log('process', process.env.NODE_ENV)
 
-  console.log('router:', router.pathname)
-  console.log('process.env:', process.env.NODE_ENV);
-  console.log('dev:', dev)
   return (
     <Row>
       <Col lg="9">
