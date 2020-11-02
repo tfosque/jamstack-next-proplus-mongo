@@ -8,10 +8,12 @@ const Cart = (props) => {
   // console.log('cart', { props });
   // var settings = require("settings");
 
-  const router = useRouter()
-  console.log('router:')
-  console.log(router.pathname)
-  console.log('process.env:', process.env.NODE_ENV)
+  const router = useRouter();
+  const dev = process.env.NODE_ENV !== 'production';
+
+  console.log('router:', router.pathname)
+  console.log('process.env:', process.env.NODE_ENV);
+  console.log('dev:', dev)
   return (
     <Row>
       <Col lg="9">

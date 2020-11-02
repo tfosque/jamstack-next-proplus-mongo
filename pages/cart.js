@@ -20,7 +20,7 @@ class CartContainer extends Component {
   }
   getCartItems() {
     axios
-    .get("http://localhost:3003/api/cartitems")
+    .get("/api/cartitems")
     .then((res) => {
       try {
         res.status === 200 ? this.setState({ cart: res.data }) : null;
