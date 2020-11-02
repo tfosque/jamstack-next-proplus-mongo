@@ -1,10 +1,14 @@
 import CartMenu from "../cart/cart-menu";
 import { Col, Row } from "react-bootstrap";
 import OrderSummary from "./cart-summary";
+import { useRouter } from 'next/router'
 import CartItem from './cart-item'
 
 const Cart = (props) => {
   // console.log('cart', { props });
+  console.log('router:', )
+  const router = useRouter()
+  console.log(router.pathname)
   return (
     <Row>
       <Col lg="9">
