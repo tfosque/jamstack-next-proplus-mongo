@@ -4,6 +4,7 @@ import { Container, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import ProductGallery from "../components/shared/products/product-gallery";
 
 /* Cart Container */
 class CartContainer extends Component {
@@ -12,37 +13,40 @@ class CartContainer extends Component {
     this.state = { cart: [], products: [] };
   }
   componentDidMount() {
-   this.getCartItems();
-   this.getProducts();
-   // console.log('process', process.env.NODE_ENV)
-   this.setState({ apiPrefix: process.env.NODE_ENV === 'development' ? 'localhost:3003/' : '/'});
+    this.getCartItems();
+    this.getProducts();
+    // console.log('process', process.env.NODE_ENV)
+    this.setState({
+      apiPrefix:
+        process.env.NODE_ENV === "development" ? "localhost:3003/" : "/",
+    });
   }
   componentDidUpdate() {
-    console.log(this.state)
+    console.log(this.state);
   }
   getCartItems() {
     axios
-    .get("/api/cartitems")
-    .then((res) => {
-      try {
-        res.status === 200 ? this.setState({ cart: res.data }) : null;
-      } catch (err) {
-        console.log(err);
-      }
-    })
-    .catch((err) => console.log(err));
+      .get("/api/cartitems")
+      .then((res) => {
+        try {
+          res.status === 200 ? this.setState({ cart: res.data }) : null;
+        } catch (err) {
+          console.log(err);
+        }
+      })
+      .catch((err) => console.log(err));
   }
   getProducts() {
     axios
-    .get("/api/products")
-    .then((res) => {
-      try {
-        res.status === 200 ? this.setState({ products: res.data }) : null;
-      } catch (err) {
-        console.log(err);
-      }
-    })
-    .catch((err) => console.log(err));
+      .get("/api/products")
+      .then((res) => {
+        try {
+          res.status === 200 ? this.setState({ products: res.data }) : null;
+        } catch (err) {
+          console.log(err);
+        }
+      })
+      .catch((err) => console.log(err));
   }
   render() {
     return (
@@ -55,6 +59,11 @@ class CartContainer extends Component {
         </Col>
         <Container>
           <Cart items={this.state.cart} />
+         
+          <Col lg="9">
+            <hr />
+            <ProductGallery products={this.state.products} />
+          </Col>
         </Container>
       </div>
     );
