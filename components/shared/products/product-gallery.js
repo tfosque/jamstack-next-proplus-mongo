@@ -1,13 +1,14 @@
 import { Component } from "react";
-const { faCartArrowDown } = require("@fortawesome/free-solid-svg-icons");
-const { FontAwesomeIcon } = require("@fortawesome/react-fontawesome");
-const { Card, Image, Row, Col, Spinner } = require("react-bootstrap");
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const { Col, Row,Spinner } = require("react-bootstrap");
+import ProductCard from './product-card'
 
 /* TODO: This should be a dummy component and make use of useEffect */
 class ProductGallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { loaded: false, products: [] };
+    this.state = { loaded: false, products: [], checked: 'text-secondary' };
   }
 
   componentDidMount() {
@@ -25,7 +26,7 @@ class ProductGallery extends Component {
     return null;
   }
   render() {
-    console.log(this.state)
+    console.log(this.state);
     const SpinnerWidget = () => {
       return (
         <Col lg="12" className="text-secondary text-center mt-5">
@@ -39,12 +40,7 @@ class ProductGallery extends Component {
       return this.props.products.map((m, i) => {
         return (
           <Col lg="3" className="mb-2" key={i}>
-            <Card>
-              <Card.Body>
-                {m.product.name}
-                <Image src={m.product.url} thumbnail />
-              </Card.Body>
-            </Card>
+            <ProductCard product={m} />
           </Col>
         );
       });
@@ -56,7 +52,6 @@ class ProductGallery extends Component {
           <FontAwesomeIcon icon={faCartArrowDown} />
           &nbsp; Available Products
         </div>
-
         <Row>{this.state.loaded ? <Gallery /> : <SpinnerWidget />}</Row>
       </div>
     );

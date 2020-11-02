@@ -15,7 +15,7 @@ class CartContainer extends Component {
   componentDidMount() {
     this.getCartItems();
     this.getProducts();
-    
+    /* TODO: Revisit */
     this.setState({
       apiPrefix:
         process.env.NODE_ENV === "development" ? "localhost:3003/" : "/",
@@ -55,13 +55,12 @@ class CartContainer extends Component {
           </h4>
         </Col>
         <Container>
+          {/* Shopping Cart */}
           <Cart items={this.state.cart} />
-         
+          {/* Product Gallery */}
           <Col lg="9">
             <hr />
-            <ProductGallery 
-              products={this.state.products} 
-            />
+            <ProductGallery products={this.state.products} />
           </Col>
         </Container>
       </div>
