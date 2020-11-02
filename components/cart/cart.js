@@ -11,7 +11,7 @@ const Cart = (props) => {
   const router = useRouter()
   console.log('router:')
   console.log(router.pathname)
-  // console.log('settings:', settings.PROJECT_DIR )
+  console.log('process.env:', process.env.NODE_ENV)
   return (
     <Row>
       <Col lg="9">
