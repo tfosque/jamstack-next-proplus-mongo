@@ -8,8 +8,6 @@ const Cart = (props) => {
   // console.log('cart', { props });
 
   const router = useRouter();
-  // const dev = process.env.NODE_ENV !== 'production';
-
   return (
     <Row>
       <Col lg="9">

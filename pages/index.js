@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import { connectToDatabase } from '../util/mongodb'
+import Head from "next/head";
+import { connectToDatabase } from "../util/mongodb";
+// import Store from "../pages/store/Store";
 
 export default function Home({ isConnected }) {
   return (
@@ -9,54 +10,58 @@ export default function Home({ isConnected }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
-        </h1>
+      <Store>
+        <main>
+          <h1 className="title">
+            Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
+          </h1>
 
-        {isConnected ? (
-          <h2 className="subtitle">You are connected to MongoDB</h2>
-        ) : (
-          <h2 className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-            for instructions.
-          </h2>
-        )}
+          {isConnected ? (
+            <h2 className="subtitle">You are connected to MongoDB</h2>
+          ) : (
+            <h2 className="subtitle">
+              You are NOT connected to MongoDB. Check the <code>README.md</code>{" "}
+              for instructions.
+            </h2>
+          )}
 
-        <p className="description">
-          <code><a href="/demo">Start Demo</a></code>
-        </p>
+          <p className="description">
+            <code>
+              <a href="/demo">Start Demo</a>
+            </code>
+          </p>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <div className="grid">
+            <a href="https://nextjs.org/docs" className="card">
+              <h3>Documentation &rarr;</h3>
+              <p>Find in-depth information about Next.js features and API.</p>
+            </a>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <a href="https://nextjs.org/learn" className="card">
+              <h3>Learn &rarr;</h3>
+              <p>Learn about Next.js in an interactive course with quizzes!</p>
+            </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <a
+              href="https://github.com/vercel/next.js/tree/master/examples"
+              className="card"
+            >
+              <h3>Examples &rarr;</h3>
+              <p>Discover and deploy boilerplate example Next.js projects.</p>
+            </a>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+            <a
+              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              className="card"
+            >
+              <h3>Deploy &rarr;</h3>
+              <p>
+                Instantly deploy your Next.js site to a public URL with Vercel.
+              </p>
+            </a>
+          </div>
+        </main>
+      </Store>
 
       <footer>
         <a
@@ -64,7 +69,7 @@ export default function Home({ isConnected }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
@@ -219,15 +224,15 @@ export default function Home({ isConnected }) {
         }
       `}</style>
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase()
+  const { client } = await connectToDatabase();
 
-  const isConnected = await client.isConnected() // Returns true or false
+  const isConnected = await client.isConnected(); // Returns true or false
 
   return {
     props: { isConnected },
-  }
+  };
 }

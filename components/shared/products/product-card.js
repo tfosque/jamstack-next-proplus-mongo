@@ -23,15 +23,15 @@ class ProductCard extends Component {
   }
   addToSelected() {
     // console.log('state:', this.ProductsState)
+    return null
   }
   handleClick() {
     this.toggleCardBorder()
-    this.addToSelected()
   }
   render() {
     const m = this.props.product;
     return (
-      <Card onClick={this.handleClick} style={this.state.cardBorder}>
+      <Card className="card" onClick={this.handleClick} style={this.state.cardBorder}>
         <Card.Img variant="top" src={m.product.url} />
         <Card.Body>
           <Card.Title>{m.product.name}</Card.Title>

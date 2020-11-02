@@ -12,8 +12,8 @@ class ProductGallery extends Component {
   }
 
   componentDidMount() {
-    // this.props.fetchProducts()
     console.log("prps:", this.props);
+   
   }
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.products !== prevState.products) {
