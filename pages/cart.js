@@ -15,14 +15,11 @@ class CartContainer extends Component {
   componentDidMount() {
     this.getCartItems();
     this.getProducts();
-    // console.log('process', process.env.NODE_ENV)
+    
     this.setState({
       apiPrefix:
         process.env.NODE_ENV === "development" ? "localhost:3003/" : "/",
     });
-  }
-  componentDidUpdate() {
-    console.log(this.state);
   }
   getCartItems() {
     axios
@@ -36,8 +33,8 @@ class CartContainer extends Component {
       })
       .catch((err) => console.log(err));
   }
-  getProducts() {
-    axios
+  async getProducts() {
+    await axios
       .get("/api/products")
       .then((res) => {
         try {
@@ -62,7 +59,9 @@ class CartContainer extends Component {
          
           <Col lg="9">
             <hr />
-            <ProductGallery products={this.state.products} />
+            <ProductGallery 
+              products={this.state.products} 
+            />
           </Col>
         </Container>
       </div>

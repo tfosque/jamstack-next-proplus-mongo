@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSignOutAlt,
   faReply,
-  faGlobe,
   faShoppingCart,
   faDivide,
 } from "@fortawesome/free-solid-svg-icons";
@@ -25,7 +24,9 @@ const ProplusNavbar = () => {
         </button>
 
         <Nav className="mr-auto">
-        <Nav.Link href="/"><FontAwesomeIcon icon={faReply} /></Nav.Link>
+          <Nav.Link href="/">
+            <FontAwesomeIcon icon={faReply} />
+          </Nav.Link>
           <Nav.Link href="#home">Beacon</Nav.Link>
           <Nav.Link href="#link" active>
             Beacon Pro+
@@ -52,26 +53,35 @@ const ProplusNavbar = () => {
         </Nav>
         <Nav className="">
           <NavDropdown title="My Account" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
+            <NavDropdown.Item href="#action/3.1">Address Book</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Accounts</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">
+              Personal Profile
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">
+              Change Password{" "}
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Save Orders</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">
+              Delivery Tracking
+            </NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">
-              Separated link
+              <FontAwesomeIcon icon={faSignOutAlt} />
+              &nbsp;Logout
             </NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown title="My Pro+ Tools" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown title="Pro+ Tools" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">
+              Promotion Tracker
+            </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
-              Another action
+              Online Bill Pay
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Perfect Order</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Quotes</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Storm+</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Beacon 3D+</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar>
