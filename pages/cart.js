@@ -6,6 +6,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import ProductGallery from "../components/shared/products/product-gallery";
 
+
 /* Cart Container */
 class CartContainer extends Component {
   constructor(props) {
@@ -63,6 +64,7 @@ class CartContainer extends Component {
             <ProductGallery products={this.state.products} />
           </Col>
         </Container>
+        
       </div>
     );
   }

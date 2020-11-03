@@ -10,11 +10,6 @@ class ProductGallery extends Component {
     super(props);
     this.state = { loaded: false, products: [], checked: 'text-secondary' };
   }
-
-  componentDidMount() {
-    // this.props.fetchProducts()
-    console.log("prps:", this.props);
-  }
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.products !== prevState.products) {
       // console.log({nextProps}, {prevState})

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { connectToDatabase } from '../util/mongodb'
 
+
 export default function Home({ isConnected }) {
   return (
     <div className="container">
