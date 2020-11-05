@@ -8,7 +8,7 @@ import ProductCard from './product-card'
 class ProductGallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { loaded: false, products: [], checked: 'text-secondary' };
+    this.state = { loaded: false, products: [], checked: 'text-secondary', on: false };
   }
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.products !== prevState.products) {
@@ -24,7 +24,7 @@ class ProductGallery extends Component {
     console.log(this.state);
     const SpinnerWidget = () => {
       return (
-        <Col lg="12" className="text-secondary text-center mt-5">
+        <Col lg="12" className="text-secondary text-center mt-5" style={{ }}>
           <Spinner size="lg" animation="border" role="status">
             <span className="sr-only">Loading...</span>
           </Spinner>

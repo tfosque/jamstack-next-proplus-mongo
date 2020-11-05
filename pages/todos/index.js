@@ -4,8 +4,10 @@ const Todo = ({ todos }) => {
     <div>
       <h3>Todos</h3>
       <ul>
-        {todos.map((m) => {
-          <li>{m.title}</li>;
+        {todos.map((m, i) => {
+          return (
+            <li key={i}>{m.title}</li>
+         )
         })}
       </ul>
     </div>
