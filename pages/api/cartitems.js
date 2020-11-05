@@ -1,5 +1,5 @@
 import { connectToDatabase } from "../../util/mongodb";
-
+/* update to gcp cloud build */
 export default async (req, res) => {
     const { db } = await connectToDatabase();
     
